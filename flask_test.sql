@@ -1,0 +1,13 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    age INTEGER,
+    phone_no TEXT
+);
+INSERT INTO user VALUES(1,'TRiSH AjT',23,'9008830298');
+INSERT INTO user VALUES(2,'TRiSH AjT',23,'9008830298');
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('user',2);
+COMMIT;
