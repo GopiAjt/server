@@ -10,7 +10,7 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port that Flask will run on
+# Expose the port that Gunicorn will run on
 EXPOSE 5000
 
 # Define environment variable for Flask to run in production mode
@@ -19,5 +19,5 @@ ENV FLASK_ENV=production
 # Run init_db() to initialize the database
 RUN python -c 'from app import init_db; init_db()'
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Use Gunicorn to run the Flask app
+CMD ["gunicorn", "-w", "4", "app:app", "-b", "0.0.0.0:5000"]
