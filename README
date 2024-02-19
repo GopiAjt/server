@@ -15,7 +15,7 @@ SQLite
 
 Installation
 Clone this repository to your local machine:
-git clone [<repository-url>](https://github.com/GopiAjt/server.git)
+git clone https://github.com/GopiAjt/server.git
 Navigate to the project directory:
 cd service
 Install the required Python packages using pip:
