@@ -1,0 +1,46 @@
+FluxKart Contact Consolidation Service
+
+This is a web service designed to consolidate contact information for customers of FluxKart, an online store. The service is capable of handling multiple orders made by the same customer using different contact information, such as email addresses and phone numbers.
+
+Features
+Consolidates contact information based on email addresses and phone numbers.
+Creates primary and secondary contacts in the database.
+Provides an endpoint for identifying and consolidating contacts.
+Returns consolidated contact details in JSON format.
+
+Requirements
+Python 3.x
+Flask
+SQLite
+
+Installation
+Clone this repository to your local machine:
+git clone [<repository-url>](https://github.com/GopiAjt/server.git)
+Navigate to the project directory:
+cd service
+Install the required Python packages using pip:
+pip install -r requirements.txt
+
+Usage
+Start the Flask server:
+python3 app.py
+
+API Endpoint
+Local Endpoint: http://127.0.0.1:5000/identify
+Global Endpoint: https://bitespeed-backend-task-ixt4.onrender.com/identify
+Method: POST
+Request Body Format:
+{
+    "email": "customer@example.com",
+    "phoneNumber": "1234567890"
+}
+
+Response Format:
+{
+    "contact": {
+        "primaryContactId": 1,
+        "emails": ["customer@example.com"],
+        "phoneNumbers": ["1234567890"],
+        "secondaryContactIds": []
+    }
+}
